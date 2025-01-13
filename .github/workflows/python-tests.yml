@@ -30,4 +30,4 @@ jobs:
           
       - name: Run tests
         run: |
-          pytest tests/
+          xvfb-run pytest tests/
