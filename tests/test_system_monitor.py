@@ -1,14 +1,23 @@
+import os
 from unittest.mock import MagicMock
 
 import pytest
 import tkinter as tk
 from GUI.system_monitor import SystemMonitor
+from db.db import create_database
+
+
+@pytest.fixture(scope='function')
+def db_setup():
+    db_path = create_database('test.db')
+    assert os.path.exists(db_path)
+    yield db_path
+    os.remove(db_path)
 
 @pytest.fixture
-def app():
+def app(db_setup):
     root = tk.Tk()
-    db_path = 'data.db'
-    app = SystemMonitor(root, db_path)
+    app = SystemMonitor(root, db_setup)
     yield app
     root.destroy()
 
