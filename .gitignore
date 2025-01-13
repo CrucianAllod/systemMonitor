@@ -29,8 +29,6 @@ eggs/
 *.ini
 *.cfg
 *.json
-*.yaml
-*.yml
 
 # IDE и редакторы
 .idea/

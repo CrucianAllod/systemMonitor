@@ -100,10 +100,3 @@ class SystemMonitor:
             self.quantity_record += 1
 
         self.root.after(1000, self.update_metrics)
-
-
-if __name__ == "__main__":
-    db_path = create_database('data.db')
-    root = tk.Tk()
-    app = SystemMonitor(db_path)
-    root.mainloop()
