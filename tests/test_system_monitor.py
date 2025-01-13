@@ -7,7 +7,8 @@ from GUI.system_monitor import SystemMonitor
 @pytest.fixture
 def app():
     root = tk.Tk()
-    app = SystemMonitor(root)
+    db_path = 'data.db'
+    app = SystemMonitor(root, db_path)
     yield app
     root.destroy()
 
