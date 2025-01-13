@@ -3,7 +3,7 @@ from tkinter import ttk
 
 import psutil
 
-from db.db import create_database, insert_load_data, fetch_history
+from db.db import insert_load_data, fetch_history
 
 
 class SystemMonitor:
